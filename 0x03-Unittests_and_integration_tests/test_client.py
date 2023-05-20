@@ -91,6 +91,16 @@ class TestGithubOrgClient(unittest.TestCase):
             mock_fun.assert_called_once()
         mock_get_json.assert_called_once()
 
+    @parameterized.expand([
+        ({"license": {"key": "my_license"}}, "my_license", True),
+        ({"license": {"key": "other_license"}}, "my_license", False)
+        ])
+    def test_has_license(self, dic, st, ret):
+        """
+        test the has_licence function
+        """
+        self.assertEqual(GOC.has_license(dic, st), ret)
+
 
 if __name__ == "__main__":
     unittest.main()
