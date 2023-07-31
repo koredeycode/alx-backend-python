@@ -124,7 +124,7 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         """
         route_payload = {
                 'https://api.github.com/orgs/google': cls.org_payload,
-                'https://api.github.com/orgs/repos': cls.repos_payload,
+                'https://api.github.com/orgs/google/repos': cls.repos_payload,
                 }
 
         def get_payload(url):
